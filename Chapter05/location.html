@@ -1,0 +1,23 @@
+<p id="demo"></p>
+<script>
+    const x =document.getElementById("demo");
+    function getlocation() {
+        try {
+            navigator.geolocation.getCurrentPosition(showposition);
+        } catch {
+            x.innerHTML = err;
+        }
+    }
+    function showposition(position) {
+        x.innerHTML = 
+        "latitiude: " +
+        position.coords.latitude +
+        "<br>longtitude; " +
+        position.coords.longtitude; 
+    }
+</script>
+<body>
+    <h2>javascript menggunakan geolocation</h2>
+    <p id="demo">klik button untuk menampilkan koordinat</p>
+    <button type="button" onclick="getlocation()">klik disini</button>
+</body>
